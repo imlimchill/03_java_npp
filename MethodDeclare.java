@@ -21,14 +21,16 @@ public class MethodDeclare {
 
 		for (int idx = 0; idx < input.length(); idx++) {
 			letters[idx] = input.charAt(idx);	
-			for(int ind = 0; ind < input.length() -1; ind++ ) {
-				if (letters[ind] > letters[ind+1]) {
-					temp = letters[ind];
-					letters[ind] = letters[ind+1];
-					letters[ind+1] = temp;
+			
+			for(int idn = idx; idn > 0; idn--)  {
+				if (letters[idn] < letters[idn-1]) {
+					temp = letters[idn];
+					letters[idn] = letters[idn-1];
+					letters[idn-1] = temp;
 				}
 			}
 		} // end for
+	
 		
 		for (char letter: letters) {
 				System.out.printf("%c", letter);
